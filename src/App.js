@@ -16,7 +16,9 @@ import Tabs from "components/Tabs";
 import tabs from './tabs.json';
 import IconButton from "./components/IconButton/IconButton";
 import { ReactComponent as AddIcon } from './components/icons/add.svg';
-import {ReactComponent as DeleteIcon } from './components/icons/delete.svg';
+import { ReactComponent as DeleteIcon } from './components/icons/delete.svg';
+import OldSignupForm from "components/SignupForm.js/SignupForm";
+import SignupForm from "components/SignupForm.js/SignupForm";
 
 
 
@@ -186,8 +188,12 @@ class App extends Component {
         return (
             <>
                
-              
                 
+              
+              
+                {/* <OldSignupForm/> */}
+                
+                <SignupForm/>
                
                 
                 
@@ -238,7 +244,7 @@ class App extends Component {
                   
                     <IconButton
                         onClick={this.toggleModal}
-                        className="Button__delete">
+                        className="Button__delete"  aria-label ="Закрити модалку">
                         <DeleteIcon width="40" height="40" fill="#fff" />
                     </IconButton>
                    
