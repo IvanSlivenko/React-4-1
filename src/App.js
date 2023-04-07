@@ -215,12 +215,12 @@ class App extends Component {
                 {/* <Clock /> */}
 
 
-                <IconButton onClick={this.toggleModal} aria-label="Додати todo">
-                    <AddIcon width="40" height="40" fill="#fff" /></IconButton>
+                {/* <IconButton onClick={this.toggleModal} aria-label="Додати todo">
+                    <AddIcon width="40" height="40" fill="#fff" /></IconButton> */}
 
-                 <h1>Стан Компонента</h1>
+                 {/* <h1>Стан Компонента</h1> */}
                 
-                <button type="button" onClick={this.toggleModal}>Відкрити модалку</button>
+                {/* <button type="button" onClick={this.toggleModal}>Відкрити модалку</button> */}
                 {/* render за умовою  /* }
                 {/* Якщо  (showModal === true) то відбувається render  <Modal/> */}
 
@@ -238,17 +238,17 @@ class App extends Component {
                 </Modal>} */}
 
 
-                 {showModal && <Modal onClose={this.toggleModal}>
+                 {/* {showModal && <Modal onClose={this.toggleModal}>
                     <TodoEditor onSubmit={this.addTodo} />
-                    {/* <button type="button" onClick={this.toggleModal}>Закрити модалку</button> */}
+                    <button type="button" onClick={this.toggleModal}>Закрити модалку</button>
                   
-                    <IconButton
+                <IconButton
                         onClick={this.toggleModal}
                         className="Button__delete"  aria-label ="Закрити модалку">
                         <DeleteIcon width="40" height="40" fill="#fff" />
                     </IconButton>
                    
-                </Modal>}
+                </Modal>} */}
 
 
                 {/* <Form onSubmiter={this.formSubmitHandler} /> */}
@@ -260,24 +260,24 @@ class App extends Component {
        
                 {/* < Dropdown /> */}
 
-                <div>
+                {/* <div>
                     <p>Загальна кількість приміток : {totalTodoCount}</p>
                     <p>Кількість виконаних : {completedTodosCount}</p>
                     <p>Кількість не виконаних : {nouCompletedTodosCount }</p>
                     
                     
-                </div>
+                </div> */}
         
                 {/* <TodoEditor onSubmit={this.addTodo} /> */}
 
-                <Filter value={filter} onChange={this.changeFilter} />
+                {/* <Filter value={filter} onChange={this.changeFilter} /> */}
                 
                 
-                <Todolist
+                {/* <Todolist
                     todos={visibleTodos}
                     onDeleteTodo={this.deleteTodo}
                     onToggleCompleted={this.toggleCompleted}
-                />
+                /> */}
            
         </>
         );

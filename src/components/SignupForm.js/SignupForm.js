@@ -3,11 +3,41 @@ import { useState } from "react";
 import styles from './SignupForm.module.css';
 
 export default function SignupForm() {
-    const [email, setEmail] = useState('qweqwe');
- 
+
+ // hooks
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleEmailChange = event => {
-        console.log(event.target.value);
+        console.log('email',event.target.value);
+        setEmail(event.target.value);
+    }
+
+    const handlePasswordChange = event => { 
+        console.log('password',event.target.value);
+        setPassword(event.target.value);
+    }
+
+    const handleChange = event => { 
+        // console.log(event.target.name);
+        const { name, value, } = event.target;
+
+        switch (name) { 
+            case 'email':
+                setEmail(value);
+                console.log(value);
+
+                
+                break;
+            
+            case 'password':
+                setPassword(value);
+                console.log(value);
+                break;
+            
+            default:
+                return;
+        }
     }
 
 
@@ -19,8 +49,18 @@ export default function SignupForm() {
                     <input
                         type="email"
                         name="email"
-                        onChange={handleEmailChange}
+                        onChange={handleChange}
                         value={email}
+                    />
+        </label>
+
+        <label className={styles.label}>
+                    <span>Пароль</span>
+                    <input
+                        type="password"
+                        name="password"
+                        onChange={handleChange}
+                        value={password}
                     />
         </label>
         
