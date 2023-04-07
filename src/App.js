@@ -193,7 +193,7 @@ class App extends Component {
               
                 {/* <OldSignupForm/> */}
                 
-                <SignupForm/>
+                {/* <SignupForm/> */}
                
                 
                 
@@ -256,7 +256,7 @@ class App extends Component {
                 
                 {/* <Counter initialValue={10} /> */}
        
-                {/* <ColorPicker options={colorPickerOptions}/> */}
+                <ColorPicker options={colorPickerOptions}/>
        
                 {/* < Dropdown /> */}
 
