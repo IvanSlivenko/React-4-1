@@ -187,21 +187,12 @@ class App extends Component {
         
         return (
             <>
-               
-                
-              
-              
-                {/* <OldSignupForm/> */}
                 
                 {/* <SignupForm/> */}
                
                 
-                
-               
-                
                 {/* <Tabs items={tabs} />   */}
 
-               
 
                 {/* <button
                     type="button"
@@ -212,7 +203,7 @@ class App extends Component {
 
                  {/* {showClock &&  <Clock />} */}
                 
-                {/* <Clock /> */}
+                <Clock />
 
 
                 {/* <IconButton onClick={this.toggleModal} aria-label="Додати todo">
@@ -256,16 +247,14 @@ class App extends Component {
                 
                 {/* <Counter initialValue={10} /> */}
        
-                <ColorPicker options={colorPickerOptions}/>
+                {/* <ColorPicker options={colorPickerOptions}/> */}
        
                 {/* < Dropdown /> */}
 
                 {/* <div>
                     <p>Загальна кількість приміток : {totalTodoCount}</p>
                     <p>Кількість виконаних : {completedTodosCount}</p>
-                    <p>Кількість не виконаних : {nouCompletedTodosCount }</p>
-                    
-                    
+                    <p>Кількість не виконаних : {nouCompletedTodosCount }</p>                    
                 </div> */}
         
                 {/* <TodoEditor onSubmit={this.addTodo} /> */}

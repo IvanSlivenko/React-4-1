@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './Clock.scss';
+import styles from '../../components/Clock/stylesClock.module.css';
 
 export default class Clock extends Component { 
     state = {
@@ -20,6 +21,18 @@ export default class Clock extends Component {
     }
 
     render() { 
-        return <div className="Clock__face">{this.state.time }</div>
+        return (
+            <div className={styles.container}>
+                <p
+                    className={styles.clockface}
+                >
+                    Поточний час : {this.state.time }
+                </p>
+        
+        
+        
+        
+            </div>
+            )
     }
 }

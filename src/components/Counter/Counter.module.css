@@ -43,3 +43,14 @@ transition: box-shadow 250ms linear;
     margin-left: 15px;
     font-size: 64px;
 }
+.btn{
+padding: 5px;
+margin: 5px;
+margin-bottom: 15px;
+border-radius: 4px;
+background-color: gray;
+color: #fff;
+font-size: 18px;
+
+
+}
