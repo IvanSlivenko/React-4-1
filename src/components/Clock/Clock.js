@@ -9,24 +9,26 @@ import styles from '../../components/Clock/stylesClock.module.css';
 export default function Clock() { 
     const [time, setTime] = useState(() => new Date());
     const intervalId = useRef(null);
-    const buttonRef=useRef(null)
+    const buttonRef = useRef(null)
 
     
 
     useEffect(() => {
         intervalId.current =
             setInterval(() => {
-            console.log('Це інтервал кожні 2000ms'+Date.now());
+            // console.log('Це інтервал кожні 2000ms'+ Date.now());
             setTime(new Date());
         }, 1000);
 
         return () => {
+            // console.log('Це функція очистки перед викликом useEffect');
+
             stop();
          }
-    },[time]);
+    },[]);
 
 
-    console.log(time);
+    // console.log(time);
     
     const stop = () => {
         // console.log(intervalId);
@@ -35,6 +37,7 @@ export default function Clock() {
 
     const start = () => { 
         intervalId.current = setInterval(() => {
+            // console.log('Це інтервал кожні 2000ms'+ Date.now());
             setTime(new Date());
         }, 1000);
         
@@ -43,12 +46,12 @@ export default function Clock() {
     // console.log(buttonRef);
     return (
         <div className={styles.container}>
-            <button
+            {/* <button
                 type="button"
                 onClick={()=>setTime(new Date())}
             >
                 Оновити state Time
-            </button>
+            </button> */}
                 <p
                     className={styles.clockface}
                 >
@@ -68,7 +71,7 @@ export default function Clock() {
                     type="button"
                     onClick={start}
                 className={styles.Button_onClock}
-                ref={buttonRef}
+                
                 >
                     Відновити
                 </button>

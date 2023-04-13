@@ -19,6 +19,7 @@ import { ReactComponent as AddIcon } from './components/icons/add.svg';
 import { ReactComponent as DeleteIcon } from './components/icons/delete.svg';
 import OldSignupForm from "components/SignupForm.js/SignupForm";
 import SignupForm from "components/SignupForm.js/SignupForm";
+import PokemonView from "views/PokemonViews";
 
 
 
@@ -188,6 +189,8 @@ class App extends Component {
         return (
             <>
                 
+                <PokemonView/>
+                
                 {/* <SignupForm/> */}
                
                 
@@ -203,7 +206,7 @@ class App extends Component {
 
                  {/* {showClock &&  <Clock />} */}
                 
-                <Clock />
+                {/* <Clock /> */}
 
 
                 {/* <IconButton onClick={this.toggleModal} aria-label="Додати todo">
