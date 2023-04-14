@@ -27,7 +27,10 @@ export default function PokemonInfo({pokemonName}){
             return;
         }
         
+       
+
         setStatus(Status.PENDING);
+        
         PokemonAPI
             .fetchPokemon(pokemonName)
             .then(pokemon => {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import shortid from "shortid";
 import Counter from 'components/Counter';
+import CounterTwo from '../src/components/Counter/CounteTwo';
 import Dropdown from "./components/Dropdown";
 import Controls from "./components/Counter";
 import ColorPicker from "./components/ColorPicker";
@@ -188,8 +189,8 @@ class App extends Component {
         
         return (
             <>
-                
-                <PokemonView/>
+                {/* Не працює */}
+                {/* <PokemonView/> */}
                 
                 {/* <SignupForm/> */}
                
@@ -206,7 +207,7 @@ class App extends Component {
 
                  {/* {showClock &&  <Clock />} */}
                 
-                {/* <Clock /> */}
+                <Clock />
 
 
                 {/* <IconButton onClick={this.toggleModal} aria-label="Додати todo">
@@ -249,6 +250,7 @@ class App extends Component {
                 
                 
                 {/* <Counter initialValue={10} /> */}
+                <CounterTwo initialValue={10} />
        
                 {/* <ColorPicker options={colorPickerOptions}/> */}
        
