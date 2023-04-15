@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import shortid from "shortid";
 import Counter from 'components/Counter';
 import CounterTwo from '../src/components/Counter/CounteTwo';
+import CounterThree from '../src/components/Counter/CounteThree';
+
+import Friends from "components/UserMenu/Friends";
+
 import Dropdown from "./components/Dropdown";
 import Controls from "./components/Counter";
 import ColorPicker from "./components/ColorPicker";
@@ -21,6 +25,9 @@ import { ReactComponent as DeleteIcon } from './components/icons/delete.svg';
 import OldSignupForm from "components/SignupForm.js/SignupForm";
 import SignupForm from "components/SignupForm.js/SignupForm";
 import PokemonView from "views/PokemonViews";
+import AppBar from "components/AppBar/AppBar";
+import NewsSearchForm from "components/News/NewsSearchForm";
+import News from "components/News/News";
 
 
 
@@ -189,6 +196,8 @@ class App extends Component {
         
         return (
             <>
+                
+                {/* <h1>Стан Компонента</h1> */}
                 {/* Не працює */}
                 {/* <PokemonView/> */}
                 
@@ -207,13 +216,13 @@ class App extends Component {
 
                  {/* {showClock &&  <Clock />} */}
                 
-                <Clock />
+                {/* <Clock /> */}
 
 
                 {/* <IconButton onClick={this.toggleModal} aria-label="Додати todo">
                     <AddIcon width="40" height="40" fill="#fff" /></IconButton> */}
 
-                 {/* <h1>Стан Компонента</h1> */}
+                 
                 
                 {/* <button type="button" onClick={this.toggleModal}>Відкрити модалку</button> */}
                 {/* render за умовою  /* }
@@ -250,7 +259,17 @@ class App extends Component {
                 
                 
                 {/* <Counter initialValue={10} /> */}
-                <CounterTwo initialValue={10} />
+                {/* <CounterTwo initialValue={10} /> */}
+                {/* <CounterThree /> */}
+
+                {/* // Не працює */}
+                <AppBar/>
+
+                {/* <Friends /> */}
+                
+                <NewsSearchForm />
+
+                <News/>
        
                 {/* <ColorPicker options={colorPickerOptions}/> */}
        

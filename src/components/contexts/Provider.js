@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import autchContext from './context';
+import autchContextTwo from './context';
 import avatar from './avatar.png';
 
 export default function Provider({ children }) { 
@@ -21,9 +21,9 @@ export default function Provider({ children }) {
     }, [isLoggedIn, user]);
     
     return (
-        <autchContext.Provider value={providerValue}>
+        <autchContextTwo value={providerValue}>
             { children}
-        </autchContext.Provider>  
+        </autchContextTwo>  
     );
 
 }

@@ -12,7 +12,9 @@ const Status = {
     REJECTED:'rejected' ,
 };
 
-export default function PokemonInfo({pokemonName}){ 
+export default function PokemonInfo({ pokemonName }) { 
+    
+    
 
     const [pokemon, setPokemon] = useState(null);
     const [error, setError] = useState(null);

@@ -74,11 +74,12 @@ border-radius: 4px;
 .value{
 font-size: 40px;
 background-color: gray;
-width: 50px;
+width: auto;
 height: 50px;
 border-radius: 4px;
 color: #fff;
 text-align: center;
-text-justify:auto;
+/* text-justify:auto; */
+padding: 5px;
 }
 
