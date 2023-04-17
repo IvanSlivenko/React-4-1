@@ -8,7 +8,7 @@ const initialFriends = [
     'Mariya Slivenko',
     'Anna Slivenko',
     'Graf Slivenko',
-    'Marfa Slivenko',
+    'Rafaella Slivenko',
     
 
 

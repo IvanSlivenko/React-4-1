@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-export default function NewsSearchForm({onSubmit, }) { 
+export default function NewsSearchForm({onSubmit }) { 
     const [query, setQuery] = useState('');
 
     const handleChange = event => {
@@ -10,14 +10,16 @@ export default function NewsSearchForm({onSubmit, }) {
     };
 
     const handleSubmit = event => {
-        event.preventdefault();
+        event.preventDefault();
         onSubmit(query);
         setQuery('');
 
     }
+   
 
     return (
     
+        
         <form onSubmit={handleSubmit}>
             <input
                 type="text"

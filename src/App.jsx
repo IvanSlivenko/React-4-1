@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import shortid from "shortid";
 import Counter from 'components/Counter';
-import CounterTwo from '../src/components/Counter/CounteTwo';
-import CounterThree from '../src/components/Counter/CounteThree';
+import CounterTwo from './components/Counter/CounteTwo';
+import CounterThree from './components/Counter/CounteThree';
 
 import Friends from "components/UserMenu/Friends";
 
@@ -28,6 +28,7 @@ import PokemonView from "views/PokemonViews";
 import AppBar from "components/AppBar/AppBar";
 import NewsSearchForm from "components/News/NewsSearchForm";
 import News from "components/News/News";
+import UserMenu from "components/UserMenu/UserMenu";
 
 
 
@@ -165,8 +166,6 @@ class App extends Component {
         const { todos } = this.state;
         return todos.reduce
             ((total, todo) => (!todo.completed ? total + 1 : total), 0)
-
-
     }
     
 
@@ -263,13 +262,16 @@ class App extends Component {
                 {/* <CounterThree /> */}
 
                 {/* // Не працює */}
-                <AppBar/>
+                <AppBar />
+
+                <UserMenu/>
+                
 
                 {/* <Friends /> */}
                 
-                <NewsSearchForm />
+                {/* <NewsSearchForm /> */}
 
-                <News/>
+                {/* <News/> */}
        
                 {/* <ColorPicker options={colorPickerOptions}/> */}
        
