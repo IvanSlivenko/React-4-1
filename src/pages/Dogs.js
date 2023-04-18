@@ -17,7 +17,7 @@ const Dogs = () => {
             ].map(dog => {
                 return (
                 
-                    <Link key={dog} to={`/dogs${dog}`}>{dog}</Link>
+                    <Link key={dog} to={`${dog}`}>{dog}</Link>
                 
                 )
 
