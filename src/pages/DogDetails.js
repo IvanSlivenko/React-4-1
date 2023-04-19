@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 const DogDetails = () => {
     const { dogId } = useParams();
@@ -16,16 +16,16 @@ const DogDetails = () => {
         <h1>DogDetails: {dogId}</h1>
         <ul>
             <li>
-                    <Link>Підпороди</Link>
+                    <Link to="subbreeds">Підпороди</Link>
                     
                 </li>
                 <li>
                     
-                    <Link>Галерея</Link>
+                    <Link to ="gallery">Галерея</Link>
             </li>
        
-        </ul>
-
+            </ul>
+            <Outlet/>
     </>
     );
 };
