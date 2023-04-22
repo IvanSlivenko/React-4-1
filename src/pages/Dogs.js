@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation,  useSearchParams } from "react-router-dom";
 const Dogs = () => { 
 
     const [dogs, setDogs] = useState([  'dog-1',
@@ -8,7 +8,9 @@ const Dogs = () => {
                 'dog-3',
                 'dog-4',
                 'dog-5',
-            ]);
+    ]);
+    
+    const location = useLocation();
     const [searchParms, setSearchParams] = useSearchParams();
     const dogId = searchParms.get('dogId') ?? "";
 
@@ -24,10 +26,12 @@ const Dogs = () => {
     const visibleDogs = dogs.filter(dog => dog.includes(dogId));
 
 //  useEffect(() => {
-//         console.log(dogId);      
+//         console.log(dogId);
 //         }, [dogId])
     
 // "/dogs/:dogId"
+    // console.log(location);
+    
     return (
         <div>
             <input
@@ -41,7 +45,7 @@ const Dogs = () => {
             {visibleDogs.map(dog => {
                 return (
                 <li key={dog}>
-                    <Link  to={`${dog}`}>{dog}</Link>
+                        <Link to={`${dog}`} state={{from: location }}>{dog}</Link>
                 </li>
                 )
 

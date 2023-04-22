@@ -36,13 +36,13 @@ import AuthProvider from 'components/UserMenu/AuthProvider';
 ReactDom.createRoot(document.getElementById('root')).render(
      <React.StrictMode>
         {/* <BrowserRouter basename='/IvanSlivenko'> */}
-            <BrowserRouter>
+        <BrowserRouter>
             <AuthProvider>
                     {/* <authContext.Provider value={{name: 'Mango' }}> */}
                     {/* <App /> */}
                     {/* <AppTwo /> */}
                     {/* <AppThree />  */}
-                <AppFour/>
+                    <AppFour/>
 
                     {/* </authContext.Provider> */}
             </AuthProvider>

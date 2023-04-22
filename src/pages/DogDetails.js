@@ -1,19 +1,21 @@
-import { useEffect } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { useEffect, useRef,Suspense } from "react";
+import { Link, Outlet, useParams,useLocation } from "react-router-dom";
 
 const DogDetails = () => {
     const { dogId } = useParams();
-
-
-    useEffect(() => {
-        // HTTP запит, якщо потрібно       
-        }, [])
+    const location = useLocation();
+    const backLinkLocationRef = useRef(location.state?.from ?? '/dogs');
+   
+    // useEffect(() => {
+    //     // HTTP запит, якщо потрібно       
+    //     }, [])
     
-    
+   
 
     return (
         <>
-        <h1>DogDetails: {dogId}</h1>
+            <h1>DogDetails: {dogId}</h1>
+            <Link to={backLinkLocationRef.current}>Назад</Link>
         <ul>
             <li>
                     <Link to="subbreeds">Підпороди</Link>
@@ -25,7 +27,9 @@ const DogDetails = () => {
             </li>
        
             </ul>
-            <Outlet/>
+            <Suspense fallback={<div>LOADING SUPRADGE...</div> }>
+                <Outlet />
+            </Suspense>
     </>
     );
 };
