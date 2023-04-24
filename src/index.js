@@ -5,33 +5,18 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import AppTwo from './AppTwo';
 import AppThree from './AppThree';
-import AppFour from 'AppFour'; 
+import AppFour from 'AppFour';
+import AppFive from 'AppFive'; 
 
 
 import AuthContextTwo from 'components/contexts/context';
 import authContext from 'components/UserMenu/authContext';
-import Provider from 'components/contexts/Provider';
+// import Provider from 'components/contexts/Provider';
+import { store } from '../src/redux/store';
+import { Provider } from 'react-redux';
 import AuthProvider from 'components/UserMenu/AuthProvider';
 
 
- 
-/////////////////////////////////////////////////////////////
-// ReactDom.render(
-//     <React.StrictMode>
-
-//         <AuthProvider>
-//         {/* <authContext.Provider value={{name: 'Mango' }}> */}
-//             <App />
-//             <AppTwo/>
-
-//         {/* </authContext.Provider> */}
-//         </AuthProvider>
-      
-//     </React.StrictMode>,
-//     document.querySelector('#root')
-// );
-
-////////////////////////////////////////////////////
 
 ReactDom.createRoot(document.getElementById('root')).render(
      <React.StrictMode>
@@ -42,7 +27,10 @@ ReactDom.createRoot(document.getElementById('root')).render(
                     {/* <App /> */}
                     {/* <AppTwo /> */}
                     {/* <AppThree />  */}
-                    <AppFour/>
+                {/* <AppFour /> */}
+                <Provider store={store}> 
+                    <AppFive />
+                </Provider>
 
                     {/* </authContext.Provider> */}
             </AuthProvider>

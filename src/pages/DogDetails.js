@@ -27,7 +27,7 @@ const DogDetails = () => {
             </li>
        
             </ul>
-            <Suspense fallback={<div>LOADING SUPRADGE...</div> }>
+            <Suspense fallback={<div>LOADING SUPRADGE ...</div> }>
                 <Outlet />
             </Suspense>
     </>
