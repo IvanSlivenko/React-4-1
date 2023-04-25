@@ -1,21 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { createAction, createReducer, createSlice } from '@reduxjs/toolkit';
+// import { createAction, createReducer, createSlice } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+import { myValueSlice } from './myValue/slice';
+import { itemsSlice } from './itemsSlice/slice';
 
-const myValueSlice = createSlice({
-    name: 'myValue',
-    initialState: 0,
-    reducers: {
-        increment: (state, action) =>{
-            return state+action.payload
-        },
-        decrement: (state, action)=> {
-            return state-action.payload
-        },
-       
-        }
-});
-    
-export const { increment, decrement } = myValueSlice.actions;
+
 
 // export const increment = createAction('myValue/increment');
 // export const decrement = createAction('myValue/decrement');
@@ -36,21 +25,7 @@ export const { increment, decrement } = myValueSlice.actions;
 // });
 
 
-const itemsSlice = createSlice({
-    name: 'items',
-    initialState: [],
-    reducers: {
-        add(state, action) {
-        state.push(action.payload)
-        },
-        remove(state, action){
-            return state.filter(item => item.id !== action.payload)
-        },
-       
-        }
-});
-    
-export const { add, remove } = itemsSlice.actions;
+
 
 // export const { increment, decrement } = myValueSlice.actions;
 
@@ -64,5 +39,6 @@ export const store = configureStore({
         // items: itemsReducer,
         items: itemsSlice.reducer,
 
-  },
+    },
+    middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(),logger],
 })

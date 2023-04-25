@@ -2,8 +2,11 @@ import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { increment } from "redux/store";
-import { decrement } from "redux/store";
+// import { increment } from "redux/store";
+// import { decrement } from "redux/store";
+
+import { increment } from "redux/myValue/slice";
+import { decrement } from "redux/myValue/slice";
 
 
 
