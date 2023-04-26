@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 // import { increment } from "redux/store";
@@ -7,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { increment } from "redux/myValue/slice";
 import { decrement } from "redux/myValue/slice";
+import { AppBarTwo } from "./AppBar/AppBarrTwo";
 
 
 
@@ -16,16 +18,24 @@ import { decrement } from "redux/myValue/slice";
 
 export const Layout = () => {
 
-    const value = useSelector(state => state.myValue);
+    // const value = useSelector(state => state.myValue);
     // console.log(value);
 
-    const dispath = useDispatch();
+    // const dispath = useDispatch();
 
     return (
-        <> 
-            <div>{value}</div>
-            <button onClick={() => dispath(increment(1))}>Increment</button>
-            <button  onClick={()=>dispath(decrement(1))}>Decrement</button>
+        <div> 
+            {/* //////////////////////////// */}
+                <AppBarTwo/>
+                <Outlet />
+            
+            {/* //////////////////////////////// */}
+
+            {/* <div>{value}</div> */}
+            {/* <button onClick={() => dispath(increment(1))}>Increment</button> */}
+            {/* <button  onClick={()=>dispath(decrement(1))}>Decrement</button> */}
+
+            {/* /////////////////////////////////// */}
 
             {/* <header>
                 <ul>
@@ -37,13 +47,14 @@ export const Layout = () => {
             <main>
                 <Suspense fallback={<div>Loading...</div> }>
                     <Outlet />
+                    //<Outlet /> № 2 
             </Suspense>
             </main> */}
 
             {/* <footer>Footer</footer> */}
             
         
-    </>
+    </div>
     );
 };
 

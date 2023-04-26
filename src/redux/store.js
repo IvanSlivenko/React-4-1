@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import { myValueSlice } from './myValue/slice';
 import { itemsSlice } from './itemsSlice/slice';
+import { userSlice } from './userSlice';
 
 
 
@@ -38,6 +39,7 @@ export const store = configureStore({
         myValue: myValueSlice.reducer,
         // items: itemsReducer,
         items: itemsSlice.reducer,
+        user: userSlice.reducer,
 
     },
     middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(),logger],
