@@ -1,6 +1,15 @@
 import { UserMenuTwo } from "components/UserMenuTwo";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+
+
+
+
 export const AppBarTwo = () => { 
+
+    
+    const isLoggedIn=useSelector(state => state.user.isLoggedIn);
     return (
         <header style={{
             display: 'flex',
@@ -16,7 +25,8 @@ export const AppBarTwo = () => {
             <nav>
                 <Link to="/login">Log in</Link>
             </nav>
-             <UserMenuTwo/>
+            {isLoggedIn && <UserMenuTwo/>}
+             
         </header>
     );
 };

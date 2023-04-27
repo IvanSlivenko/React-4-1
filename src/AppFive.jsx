@@ -8,7 +8,8 @@ import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "components/Layout";
 // import { SubBreeds } from "components/SubBreeds";
-import { LoginPage } from "pages/LoginPages";
+import { LoginPage } from "pages";
+import { DashboardPage } from 'pages';
 
 // const MyComponent = lazy(() => import('path/to/MyComponent'));
 const Home = lazy(() => import('./pages/Home').then(module => {
@@ -37,9 +38,10 @@ export default function AppFive(){
            
                 <Routes>
                     <Route path="/" element={<Layout />}>
-                        <Route path="login" element={<LoginPage />} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="DashboardPage" element={<DashboardPage />} />
                             
-                        <Route index element={<Home />} />
+                        {/* <Route index element={<Home />} /> */}
                         <Route path="dogs" element={<Dogs />} /> 
                         <Route path="dogs/:dogId" element={<DogDetails />}>
                             <Route path="subbreeds" element={<div><SubBreeds/></div>} />
