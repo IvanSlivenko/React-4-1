@@ -18,22 +18,22 @@ import { AppBarTwo } from "./AppBar/AppBarrTwo";
 
 export const Layout = () => {
 
-    // const value = useSelector(state => state.myValue);
+    const value = useSelector(state => state.myValue);
     // console.log(value);
 
-    // const dispath = useDispatch();
+    const dispath = useDispatch();
 
     return (
         <div> 
             {/* //////////////////////////// */}
-                <AppBarTwo/>
-                <Outlet />
+                {/* <AppBarTwo/> */}
+                {/* <Outlet /> */}
             
             {/* //////////////////////////////// */}
 
-            {/* <div>{value}</div> */}
-            {/* <button onClick={() => dispath(increment(1))}>Increment</button> */}
-            {/* <button  onClick={()=>dispath(decrement(1))}>Decrement</button> */}
+            <div>{value}</div>
+            <button onClick={() => dispath(increment(1))}>Increment</button>
+            <button  onClick={()=>dispath(decrement(1))}>Decrement</button>
 
             {/* /////////////////////////////////// */}
 

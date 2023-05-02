@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 
 
-export const AppBarTwo = () => { 
+export const AppBarThree = () => { 
 
     
     const isLoggedIn=useSelector(state => state.user.isLoggedIn);
