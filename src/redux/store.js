@@ -1,4 +1,4 @@
-import { configureStore} from '@reduxjs/toolkit';
+import { configureStore,getDefaultMiddleware} from '@reduxjs/toolkit';
 // import { persistStore } from 'redux-persist';
 import { clicksReducer } from './clicksSlise/clicksSlice';
 
@@ -7,22 +7,30 @@ import { myValueSlice } from './myValue/slice';
 import { itemsSlice } from './itemsSlice/slice';
 import { userSlice } from './userSlice';
 import { clicksSlice } from './clicksSlise/clicksSlice';
-import { storage } from 'redux-persist/lib/storage';
+// import { storage } from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
 import {
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist'
+    persistStore,
+    FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER,
+} from 'redux-persist';
 
 
 
 import { todosReducer } from './todos';
-import { authReducer} from './auth'
+import { authReducer} from './auth/auth-slice'
 import persistReducer from 'redux-persist/es/persistReducer';
+
+
+
+const middleware = [
+    ...getDefaultMiddleware(), logger
+];
+
 
 const authPersistConfig = {
     key: 'auth',
@@ -56,7 +64,8 @@ export const store = configureStore({
     //     });
     // }, 
     
-    middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), logger],
+    middleware,
+    devTools:process.env.NODE_ENV==='development',
 });
 
 export const persistor = persistStore(store);
