@@ -1,29 +1,74 @@
-import React from "react";
-
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import  authOperations  from '../redux/auth/auth-operations';
 
 const styles = {
-    container: {
-        minHeight: 'calc(100vh-50px)',
+    form: {
+        width: 320,
+    },
+    label: {
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontWeight: 500,
-        fontSize: 48,
-        textAlign: 'center',
+        flexDirection: 'column',
+        marginBottom: 15,
     },
 };
-const LoginView = () => {
-    <div style={styles.container}>
-        <h1 style={styles.title}>
-            Вітальна сторінка нашого сервіса {''}
-            <span role="img" aria-label="іконка вітання">
-            🤠
-            </span>
-        </h1>
-    </div>
 
+export default function LoginView() { 
+    const dispatch = useDispatch();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+const handleChange = ({ target: { name, value } }) => { 
+
+    switch (name) { 
+        case 'email':
+            return setEmail(value);
+        case 'password':
+            return setPassword(value);
+        default:
+            return;
+    }
 };
- 
-export default LoginView;
+
+const handleSubmit = event => {
+    event.preventDefault();
+    dispatch(authOperations.logIn({ email, password }));
+    setEmail('');
+    setPassword('');
+
+    };
+
+    return (
+        <div>
+            <h1> Сторінка реєстрації</h1>
+            <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
+
+                <label style={styles.label}>
+                    Пошта
+                    <input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                    />
+                </label>
+
+                <label style={styles.label}>
+                    Пароль
+                    <input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}
+                    />
+                </label>
+
+                <button >
+                    Увійти
+                </button>
+                
+            </form>
+        </div>
+    )
+};

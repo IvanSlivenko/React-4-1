@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../redux/auth';
+import  authOperations  from '../redux/auth/auth-operations';
 
 const styles = {
     form: {
@@ -60,6 +60,20 @@ const handleSubmit = event => {
                         onChange={handleChange}
                     />
                 </label>
+
+                <label style={styles.label}>
+                    Пароль
+                    <input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}
+                    />
+                </label>
+
+                <button >
+                    Зареєструватись
+                </button>
                 
             </form>
         </div>

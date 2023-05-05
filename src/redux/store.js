@@ -21,8 +21,8 @@ import {
 
 
 
-import { todosReducer } from './todos';
-import { authReducer} from './auth/auth-slice'
+import { todosReducer } from './todos/todosSlice';
+import  authReducer  from './auth/auth-slice';
 import persistReducer from 'redux-persist/es/persistReducer';
 
 
