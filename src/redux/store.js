@@ -19,18 +19,13 @@ import {
     REGISTER,
 } from 'redux-persist';
 
-
-
-import { todosReducer } from './todos/todosSlice';
+// import { todosReducer } from './todos/todosSlice';
 import  authReducer  from './auth/auth-slice';
 import persistReducer from 'redux-persist/es/persistReducer';
 
-
-
-const middleware = [
-    ...getDefaultMiddleware(), logger
-];
-
+// const middleware = [
+//     ...getDefaultMiddleware(), logger
+// ];
 
 const authPersistConfig = {
     key: 'auth',
@@ -39,18 +34,15 @@ const authPersistConfig = {
 }
 
 
-
-
-
-export const store = configureStore({
+const store = configureStore({
     reducer: {
       
-        // myValue: myValueSlice.reducer,
-        // items: itemsSlice.reducer,
-        // user: userSlice.reducer,
-        // clicks: clicksReducer,
+        myValue: myValueSlice.reducer,
+        items: itemsSlice.reducer,
+        user: userSlice.reducer,
+        clicks: clicksReducer,
         autch: persistReducer(authPersistConfig, authReducer),
-        todos: todosReducer,
+        // todos: todosReducer,
         
 
     },
@@ -64,7 +56,7 @@ export const store = configureStore({
     //     });
     // }, 
     
-    middleware,
+    // middleware,
     devTools:process.env.NODE_ENV==='development',
 });
 

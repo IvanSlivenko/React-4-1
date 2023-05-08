@@ -12,7 +12,8 @@ const styles = {
 
 };
 
-export default function AuthNav() {
+export const AuthNav = () => {
+    return(
     <nav>
         <NavLink
             to="/register"
@@ -30,6 +31,7 @@ export default function AuthNav() {
         >
             Логін
         </NavLink>
-    </nav>
+        </nav>
+    )
 };
 

@@ -5,48 +5,52 @@ import { lazy } from "react";
 // import Home from "pages/Home";
 // import DogDetails from "pages/DogDetails";
 // import { Gallery } from "components/Gallery";
+
 import { Route, Routes } from "react-router-dom";
+import Switch from 'react-switch';
+
 import { Layout } from "components/Layout";
 // import { SubBreeds } from "components/SubBreeds";
 import { LoginPage } from "pages";
 import { DashboardPage } from 'pages';
-import  AppBarThree  from "components/AppBar/AppBarrThree";
-import Switch from 'react-switch';
-import HomeView from 'views/HomeView';
-import RegisterViewTwo from 'views/RegisterViewTwo';
-import LoginView from 'views/LoginView';
-import TodosView from 'views/TodosView';
+import AppBarThree from '../src/components/AppBar/AppBarrThree';
+
+
+import {HomeView} from '../src/views/HomeView';
+import {RegisterViewTwo} from './views/RegisterView';
+import {LoginView} from '../src/views/LoginView';
+import {TodosView} from '../src/views/TodosView';
 
 
 
 
 
-export default function AppEight(){
+
+
+
+const AppEight=()=>{
     return (
-      
-        <>
+       <div>
+               
             <AppBarThree />
+           
             
-            <Switch>
+           
+
+          
+            {/* <Switch> */}
                 <Routes>
-                    <Route path="/" component={HomeView}/>
-                    <Route path="/register" component={RegisterViewTwo} />
-                    <Route path="/login" component={LoginView} />
-                    <Route path="/todos" component={TodosView} /> 
-                </Routes>
-            </Switch>
+                    <Route path="/" element={<HomeView/>}/>
+                    <Route path="/register" element={<RegisterViewTwo/>} />
+                    <Route path="/login" element={<LoginView />} />
+                    <Route path="/todos" element={<TodosView/>} /> 
+                </Routes> 
+            {/* </Switch>  */}
             
-        </>
-           
-        
-             
-           
-                   
-        
-        
-         
             
+        </div>
+               
     );  
 };
 
-    
+export default AppEight;

@@ -9,15 +9,16 @@ import AppThree from './AppThree';
 import AppFour from 'AppFour';
 import AppFive from 'AppFive'; 
 import AppSix from 'AppSix'; 
-import AppEight from 'AppEight';
+import AppEight from '../src/AppEight';
 import AppSeven from 'AppSeven';
 
 
 import AuthContextTwo from 'components/contexts/context';
 import authContext from 'components/UserMenu/authContext';
 // import Provider from 'components/contexts/Provider';
-import { store,persistor } from '../src/redux/store';
-import { Provider } from 'react-redux';
+// import { store, persistor } from '../src/redux/store';
+import {store, persistor } from '../src/redux/store';
+import {Provider } from 'react-redux';
 import AuthProvider from 'components/UserMenu/AuthProvider';
 
 
@@ -25,28 +26,33 @@ import AuthProvider from 'components/UserMenu/AuthProvider';
 ReactDom.createRoot(document.getElementById('root')).render(
      <React.StrictMode>
         {/* <BrowserRouter basename='/IvanSlivenko'> */}
-        {/* <BrowserRouter> */}
-            {/* <AuthProvider> */}
+        <BrowserRouter>
+        {/* <AuthProvider> */}
+         
                             {/* <authContext.Provider value={{name: 'Mango' }}> */}
                             {/* <App /> */}
                             {/* <AppTwo /> */}
                             {/* <AppThree />  */}
-                            {/* <AppFour /> */}
-                <Provider store={store}>
-                    <PersistGate loading={null} persistor={persistor}>
-                        <BrowserRouter>
-                            {/* <AppFive /> */}
+                             {/* <AppFive /> */}
                             {/* <AppSix /> */}
                             {/* <AppSeven /> */}
-                            <AppEight />
+        
+            
+                {/* <Provider store={persistor}> */}
+                    {/* <PersistGate loading={null} persistor={persistor}> */}
+                        {/* <BrowserRouter> */}
+                           
+        <AppEight />
+
+
                        
-                        </BrowserRouter>
-                    </PersistGate> 
-                </Provider>
+                        {/* </BrowserRouter> */}
+                    {/* </PersistGate>  */}
+                {/* </Provider> */}
 
                     {/* </authContext.Provider> */}
             {/* </AuthProvider> */}
-        {/* </BrowserRouter> */}
+        </BrowserRouter>
       
     </React.StrictMode>
 );

@@ -14,16 +14,15 @@ const styles = {
         textAlign: 'center',
     },
 };
-const TodosView = () => {
+export const TodosView = () => {
+    return(
     <div style={styles.container}>
         <h1 style={styles.title}>
-            Вітальна сторінка нашого сервіса {''}
-            <span role="img" aria-label="іконка вітання">
-            🤠
-            </span>
+            todos
+            
         </h1>
     </div>
-
+    )
 };
  
-export default TodosView;
+// export default TodosView;

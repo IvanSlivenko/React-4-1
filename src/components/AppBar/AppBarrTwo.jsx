@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 
 
-export const AppBarTwo = () => { 
+const AppBarTwo = () => { 
 
     
     const isLoggedIn=useSelector(state => state.user.isLoggedIn);
@@ -33,3 +33,5 @@ export const AppBarTwo = () => {
         </header>
     );
 };
+
+export default AppBarTwo;

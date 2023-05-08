@@ -41,7 +41,7 @@ export default function AppSix(){
                     <Route path="login" element={<LoginPage />} />
                     <Route path="DashboardPage" element={<DashboardPage />} />
                             
-                        {/* <Route index element={<Home />} /> */}
+                        <Route index element={<Home />} />
                         <Route path="dogs" element={<Dogs />} /> 
                         <Route path="dogs/:dogId" element={<DogDetails />}>
                             <Route path="subbreeds" element={<div><SubBreeds/></div>} />
