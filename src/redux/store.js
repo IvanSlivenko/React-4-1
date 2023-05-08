@@ -1,5 +1,4 @@
 import { configureStore,getDefaultMiddleware} from '@reduxjs/toolkit';
-// import { persistStore } from 'redux-persist';
 import { clicksReducer } from './clicksSlise/clicksSlice';
 
 import logger from 'redux-logger';
@@ -7,8 +6,7 @@ import { myValueSlice } from './myValue/slice';
 import { itemsSlice } from './itemsSlice/slice';
 import { userSlice } from './userSlice';
 import { clicksSlice } from './clicksSlise/clicksSlice';
-// import { storage } from 'redux-persist/lib/storage';
-import storage from 'redux-persist/lib/storage';
+
 import {
     persistStore,
     FLUSH,
@@ -18,10 +16,12 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-// import { todosReducer } from './todos/todosSlice';
-import  authReducer  from './auth/auth-slice';
+
+import authReducer  from './auth/auth-slice';
 import persistReducer from 'redux-persist/es/persistReducer';
+// import { todosReducer } from './todos/todosSlice';
 
 // const middleware = [
 //     ...getDefaultMiddleware(), logger
@@ -34,13 +34,15 @@ const authPersistConfig = {
 }
 
 
-const store = configureStore({
+export const store = configureStore({
     reducer: {
       
         myValue: myValueSlice.reducer,
         items: itemsSlice.reducer,
         user: userSlice.reducer,
         clicks: clicksReducer,
+
+        
         autch: persistReducer(authPersistConfig, authReducer),
         // todos: todosReducer,
         
@@ -48,13 +50,13 @@ const store = configureStore({
     },
     // middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), logger],
 
-    // middleware(getDefaultMiddleware) {
-    //     return getDefaultMiddleware({
-    //         serializableCheck: {
-    //             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    //         },
-    //     });
-    // }, 
+    middleware(getDefaultMiddleware) {
+        return getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+        });
+    }, 
     
     // middleware,
     devTools:process.env.NODE_ENV==='development',

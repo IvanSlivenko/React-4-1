@@ -39,7 +39,7 @@ export const UserMenuThree=() => {
         <div style={styles.container}>
             <img src={avatar} alt="avatar" width="32" style={styles.avatar} />
             <span style={styles.name}> Ласкаво просимо , {name}</span>
-            <button type="button" onClick={() => {console.log('Yelloy'); }}>
+            <button type="button" onClick={() => {console.log('Helloy'); }}>
                  Вийти
             </button>
             

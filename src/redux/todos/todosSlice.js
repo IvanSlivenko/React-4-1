@@ -11,7 +11,7 @@
 // };
 
 // const todoSlice = createSlice({
-//     name: 'auth',
+//     name: 'todo',
 //     initialState,
 //     extraReducers:{
 //         [authOperations.register.fulfilled](state,action){

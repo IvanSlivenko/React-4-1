@@ -14,41 +14,47 @@ const styles = {
 };
 
 export  const  RegisterViewTwo=()=> { 
-//     const dispatch = useDispatch();
-//     const [name, setName] = useState('');
-//     const [email, setEmail] = useState('');
-//     const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
 
-// const handleChange = ({ target: { name, value } }) => { 
+const handleChange = ({ target: { name, value } }) => { 
 
-//     switch (name) { 
-//         case 'name':
-//             return setName(value);
-//         case 'email':
-//             return setEmail(value);
-//         case 'password':
-//             return setPassword(value);
-//         default:
-//             return;
-//     }
-// };
+    switch (name) { 
+        case 'name':
+            return setName(value);
+        case 'email':
+            return setEmail(value);
+        case 'password':
+            return setPassword(value);
+        default:
+            return;
+    }
+};
 
-// const handleSubmit = event => {
-//     event.preventDefault();
-//     dispatch(operations.register({ name, email, password }));
-//     setName('');
-//     setEmail('');
-//     setPassword('');
+const handleSubmit = event => {
+    event.preventDefault();
+    dispatch(operations.register({ name, email, password }));
+    setName('');
+    setEmail('');
+    setPassword('');
 
-//     };
+    };
 
     return (
         <div>
             <h1> Сторінка реєстрації</h1>
-            {/* <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
+             <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
                 <label style={styles.label}>
                     Ім'я
+                    <input
+                        type="name"
+                        name="name"
+                        value={name}
+                        onChange={handleChange}
+                    />
                 </label>
 
                 <label style={styles.label}>
@@ -68,39 +74,6 @@ export  const  RegisterViewTwo=()=> {
                         name="password"
                         value={password}
                         onChange={handleChange}
-                    />
-                </label>
-
-                <button >
-                    Зареєструватись
-                </button>
-                
-            </form> */}
-
-            {/* /////////////////////////// */}
-
-             <form onSubmit={''} style={styles.form} autoComplete="off">
-                <label style={styles.label}>
-                    Ім'я
-                </label>
-
-                <label style={styles.label}>
-                    Пошта
-                    <input
-                        type="email"
-                        name="email"
-                        value={''}
-                        onChange={''}
-                    />
-                </label>
-
-                <label style={styles.label}>
-                    Пароль
-                    <input
-                        type="password"
-                        name="password"
-                        value={''}
-                        onChange={''}
                     />
                 </label>
 
