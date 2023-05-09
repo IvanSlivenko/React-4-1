@@ -9,7 +9,7 @@ const styles = {
         // background: 'green',
     },
     activeLink: {
-        color:'#E840A5F' 
+        color:'#E84A5F' 
     },
 
 };
@@ -23,15 +23,15 @@ export const Navigation=()=> {
             <NavLink
                 to="/"
                 style={styles.link}
-                activeStyle={styles.activeLink}>
+                activestyle={styles.activeLink}>
             Головна
         </NavLink>
 
         <NavLink
             to="/todos"
-            exact
+            exact='true'
             style={styles.link}
-            activeStyle={styles.activeLink}
+            activestyle={styles.activeLink}
         >
             Нотатки
             </NavLink>

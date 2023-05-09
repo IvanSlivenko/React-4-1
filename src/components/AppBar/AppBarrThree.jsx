@@ -12,11 +12,6 @@ import { AuthNav } from '../UserMenu/AuthNav';
 import { UserMenuThree } from '../UserMenu/UserMenuThree';
 
 
-
-
-
-
-
 const styles = {
     header: {
         padding: 4,
@@ -30,20 +25,20 @@ const styles = {
     },
 };
 
-
 export default function AppBarThree () { 
-    // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+    console.log(isLoggedIn);
     
     
     return (
         <header style={styles.header} >
 
             <Navigation />
-            <AuthNav />
-            <UserMenuThree />
+            {/* <AuthNav /> */}
+            {/* <UserMenuThree /> */}
             
 
-            {/* {isLoggedIn ? <UserMenuThree /> : <AuthNav/> } */}
+            {isLoggedIn ? <UserMenuThree /> : <AuthNav/>  }
             
         </header>
     );

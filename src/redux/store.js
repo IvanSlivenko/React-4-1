@@ -28,7 +28,7 @@ import persistReducer from 'redux-persist/es/persistReducer';
 // ];
 
 const authPersistConfig = {
-    key: 'auth',
+    key: 'autch',
     storage,
     whitelist:['token'],
 }
@@ -37,10 +37,10 @@ const authPersistConfig = {
 export const store = configureStore({
     reducer: {
       
-        myValue: myValueSlice.reducer,
-        items: itemsSlice.reducer,
-        user: userSlice.reducer,
-        clicks: clicksReducer,
+        // myValue: myValueSlice.reducer,
+        // items: itemsSlice.reducer,
+        // user: userSlice.reducer,
+        // clicks: clicksReducer,
 
         
         autch: persistReducer(authPersistConfig, authReducer),

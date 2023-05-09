@@ -1,6 +1,8 @@
-const getIsLoggedIn = state => state.auth.isLoggedIn;
+const getIsLoggedIn = state => state.autch.isLoggedIn;
 
-const getUsername = state => state.auth.user.name;
+
+
+const getUsername = state => state.autch.user.name;
 
 
 const authSelectors = {

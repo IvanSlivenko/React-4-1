@@ -46,6 +46,7 @@ const handleChange = ({ target: { name, value } }) => {
 const handleSubmit = event => {
     event.preventDefault();
     dispatch(operations.logIn({ email, password }));
+    
     setEmail('');
     setPassword('');
 
