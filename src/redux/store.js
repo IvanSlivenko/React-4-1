@@ -42,7 +42,7 @@ export const store = configureStore({
         // user: userSlice.reducer,
         // clicks: clicksReducer,
 
-        
+        // autch:authReducer,
         autch: persistReducer(authPersistConfig, authReducer),
         // todos: todosReducer,
         

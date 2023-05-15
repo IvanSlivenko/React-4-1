@@ -27,13 +27,22 @@ export const Navigation=()=> {
             Головна
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
             to="/todos"
             exact='true'
             style={styles.link}
             activestyle={styles.activeLink}
         >
             Нотатки
+            </NavLink> */}
+
+        <NavLink
+            to="/user"
+            exact='true'
+            style={styles.link}
+            activestyle={styles.activeLink}
+        >
+            Приватна Сторінка
             </NavLink>
              
         </nav >

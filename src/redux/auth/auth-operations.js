@@ -18,7 +18,6 @@ const token = {
 
 
 const register = createAsyncThunk('auth/register', async credentials => {
-    //  console.log(credentials);
     try {
         const { data } = await axios.post('/users/signup', credentials);
        
@@ -42,6 +41,30 @@ const logOut = createAsyncThunk('auth/logout', async () => {
     } catch (error) { }
 });
 
+const fetchCurrenUser = createAsyncThunk('auth/refresh',
+    async (_, thunkAPI) => {
+        const state = thunkAPI.getState();
+        const persistedToken = state.autch.token;
+        
+        
+        if (persistedToken === null) {
+            // console.log('Токена не має, виходимо з  fetchCurrenUser');
+            // return rejectWithValue(err.response.data)
+            return thunkAPI.rejectWithValue()
+            //  return state
+            
+        }
+        token.set(persistedToken)
+        try {
+            const {data} = await axios.get('/users/current');
+            // console.log(data);
+            return data
+        } catch (error) { 
+
+        }
+
+    });
+
 // const getCurrentUser = () => async (Dispatch, getState) => { 
 //     const { 
 //         autch: { token: persistedNoren},
@@ -55,6 +78,7 @@ const operations = {
     register,
     logIn,
     logOut,
+    fetchCurrenUser,
 
 };
 export default operations;
